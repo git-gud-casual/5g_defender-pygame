@@ -45,9 +45,8 @@ class WaveGenerate:
                 self.is_wave:
             self.is_wave = False
             self.wave += 1
-            self.damage += 0.1
-            self.damage %= 1.1
-            self.enemy_count += 1
+            if self.damage < 1.1:
+                self.damage += 0.1
             if self.enemy_count < 18:
                 self.enemy_count += 1
             self.status.counter(True)
