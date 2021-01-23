@@ -49,7 +49,6 @@ class Game:
             self.all_sprites_group[4].draw(self.screen)
             self.cur.kill()
         pg.display.flip()
-        return True
 
     back_to_menu = False
 
