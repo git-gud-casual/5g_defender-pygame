@@ -51,9 +51,12 @@ class Player(pg.sprite.Sprite):
                                'shooting': load_sound('shotgun_shooting.ogg')}
         self.weapon_sounds = {'rifle': self.rifle_sounds,
                               'shotgun': self.shotgun_sounds}
+        for weapon in self.weapon_sounds.keys():
+            for sound in self.rifle_sounds.keys():
+                self.weapon_sounds[weapon][sound].set_volume(0.3)
         self.walking_sound = load_sound('walking.ogg').play(-1)
         self.walking_sound.pause()
-        self.walking_sound.set_volume(0.5)
+        self.walking_sound.set_volume(0.3)
 
     # Передвижение
     def move(self):
