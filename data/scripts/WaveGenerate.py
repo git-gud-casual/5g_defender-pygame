@@ -48,7 +48,8 @@ class WaveGenerate:
             self.damage += 0.1
             self.damage %= 1.1
             self.enemy_count += 1
-            self.enemy_count %= 18
+            if self.enemy_count < 18:
+                self.enemy_count += 1
             self.status.counter(True)
             self.new_wave_time = time()
 
