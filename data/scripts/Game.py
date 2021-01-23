@@ -9,7 +9,6 @@ import sqlite3
 
 
 class Game:
-    enemies = set()
     font = pg.font.Font('data/fonts/DroidSansMono.ttf', 29)
 
     def __init__(self, screen, player_pos):
