@@ -9,13 +9,13 @@ import sqlite3
 
 
 class Game:
-    # 0 - спрайты крови, 1 - спрайты предметов, 2 - спрайты существ,
-    # 3 - спрайты патронов, 4 - спрайты интерфейса
     enemies = set()
     font = pg.font.Font('data/fonts/DroidSansMono.ttf', 29)
 
     def __init__(self, screen, player_pos):
         self.screen = screen
+        # 0 - спрайты крови, 1 - спрайты предметов, 2 - спрайты существ,
+        # 3 - спрайты патронов, 4 - спрайты интерфейса
         self.all_sprites_group = [pg.sprite.Group() for _ in range(5)]
         self.player = Player(player_pos, 0, self.all_sprites_group[2])
         self.tower = Tower(self.all_sprites_group[2])
