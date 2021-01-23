@@ -18,6 +18,7 @@ class Menu:
         self.screen = screen
         self.game = Game(self.screen, (300, 300))
         self.main_theme = load_sound('menu_theme.mp3').play(-1)
+        self.main_theme.set_volume(0.7)
 
     def render(self):
         for event in pg.event.get():
