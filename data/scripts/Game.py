@@ -33,11 +33,11 @@ class Game:
         if not (self.player.hp <= 0 or self.tower.hp <= 0):
             self.wave.spawn_enemies()
             self.screen.blit(self.background, (0, 0))
+            self.tower_hp.update()
             for group in self.all_sprites_group:
                 group.draw(self.screen)
                 group.update(pg.mouse.get_pressed(num_buttons=3), self.all_sprites_group,
                              self.player, self.wave.enemies, self.tower, self.status)
-            self.tower_hp.update()
             self.wave.wave_print(self.screen)
             self.status.render(self.player.weapon, self.player.weapon_ammo[self.player.weapon],
                                self.wave.enemy_count, self.player.reloading)
